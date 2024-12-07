@@ -22,13 +22,13 @@ export default function Footer() {
     <footer className='flex flex-col bg-primary shadow-2xl px-64'>
       <div className='flex justify-between py-10 items-start'>
         <Link to={'/'} className='flex items-center gap-2'>
-          <SiTrustedshops className='size-14 text-card' />
-          <h1 className='text-2xl font-semibold'>Logo</h1>
+          <SiTrustedshops className='size-14 text-secondary' />
+          <h1 className='text-2xl font-semibold text-secondary'>Logo</h1>
         </Link>
 
         <ul className='flex flex-col gap-2 text-lg font-normal font-sans text-foregroud'>
           {items.map((item, _: number) => (
-            <li key={_}>
+            <li key={_} className='text-secondary font-medium'>
               <Link to={item.path}>{item.item}</Link>
             </li>
           ))}
@@ -36,7 +36,7 @@ export default function Footer() {
 
         <ul className='flex flex-col gap-2 text-lg font-normal font-sans text-foregroud'>
           {items.map((item, _: number) => (
-            <li key={_}>
+            <li key={_} className='text-secondary font-medium'>
               <Link to={item.path}>{item.item}</Link>
             </li>
           ))}
@@ -44,7 +44,10 @@ export default function Footer() {
 
         <ul className='flex flex-col gap-2'>
           {socials.map((social, _: number) => (
-            <li key={_} className='flex gap-2 items-center'>
+            <li
+              key={_}
+              className='flex gap-2 items-center text-secondary font-medium'
+            >
               <social.icon className='size-6' />
               {social.social}
             </li>
