@@ -3,7 +3,7 @@ import { router } from './config/router';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const client = new QueryClient({
-  defaultOptions: { queries: { staleTime: 2 } },
+  defaultOptions: { queries: { retry: 1 } },
 });
 
 export default function App(): React.ReactNode {

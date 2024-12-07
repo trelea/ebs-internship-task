@@ -6,8 +6,6 @@ import {
   FormLabel,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { useSearchParams } from 'react-router-dom';
-import { useEffect, useRef } from 'react';
 
 interface Props {
   fieldName: string;

@@ -13,6 +13,7 @@ import { Button } from '@/components/ui/button';
 import { useSearchParams } from 'react-router-dom';
 import { useSyncURI } from '../hooks/useSyncURI';
 import Loading from '@/components/Loading';
+import ErrorDialog from '@/components/ErrorDialog';
 
 export default function Filtration() {
   const [q] = useSearchParams();
@@ -20,7 +21,7 @@ export default function Filtration() {
   const { data, isError, error, isFetching, isPending, isLoading } =
     useGetCategories();
 
-  if (isError || error) return;
+  if (isError || error) return <ErrorDialog />;
 
   return (
     <Card className='w-96 h-fit shadow-xl'>
