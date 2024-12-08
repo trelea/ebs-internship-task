@@ -1,5 +1,4 @@
 import { Product } from '@/feautures/products/types/products.types';
-import React from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 const iterateIntoURIQueries = (queries: URLSearchParams) => {
