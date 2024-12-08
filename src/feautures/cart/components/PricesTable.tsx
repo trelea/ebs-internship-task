@@ -18,6 +18,7 @@ import ProceedCheckout from './ProceedCheckout';
 
 export default function PricesTable() {
   const { products, clearCart } = useContext(CartContextElement);
+
   return (
     <>
       {products.length !== 0 && (

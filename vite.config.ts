@@ -5,6 +5,11 @@ import path from 'path';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './tests/setup',
+  },
   build: {
     target: 'esnext',
     chunkSizeWarningLimit: 1600,
