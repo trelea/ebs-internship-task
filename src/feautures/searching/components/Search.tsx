@@ -5,13 +5,13 @@ import { useSearchProduct } from '../hooks/useSearchProduct';
 export default function Search() {
   const { handleSubmit, handleEmptyString, queries } = useSearchProduct();
   return (
-    <form className='flex gap-4' onSubmit={handleSubmit}>
+    <form className='flex gap-2 md:gap-4' onSubmit={handleSubmit}>
       <Input
         type='text'
         placeholder='Search your product...'
         name='query'
         onChange={handleEmptyString}
-        className='bg-white shadow-2xl'
+        className='bg-white shadow-2xl text-sm lg:text-base'
         defaultValue={queries.get('query') || ''}
       />
       <Button type='submit' className='px-10'>

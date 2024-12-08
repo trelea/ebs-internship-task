@@ -29,7 +29,10 @@ export const useSyncURI = () => {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
+  const onSubmit = (
+    values: z.infer<typeof formSchema>,
+    callBack?: () => void
+  ) => {
     let q = {};
 
     Object.entries(values).map(([key, value]) => {
@@ -39,6 +42,8 @@ export const useSyncURI = () => {
     });
 
     setQueries(q);
+
+    if (callBack) callBack();
   };
 
   return { form, onSubmit };
