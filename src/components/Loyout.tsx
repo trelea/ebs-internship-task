@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { Toaster } from './ui/toaster';
 
 interface Props {
   children: React.ReactNode;
@@ -14,6 +15,7 @@ export default function Loyout({ children }: Props) {
         {children}
       </div>
       <Footer />
+      <Toaster />
     </div>
   );
 }

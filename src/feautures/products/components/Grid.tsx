@@ -24,8 +24,9 @@ export default function Grid({ products, loading, err }: Props) {
           {products?.map((product) => (
             <CardProduct
               key={product.id}
-              img={product.image}
-              name={product.title}
+              id={product.id}
+              image={product.image}
+              title={product.title}
               price={product.price}
               category={product.category}
             />

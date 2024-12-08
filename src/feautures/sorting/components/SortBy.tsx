@@ -24,22 +24,22 @@ export default function SortBy() {
         <SelectGroup>
           <SelectLabel>Sort By:</SelectLabel>
           {SortByGroups.map((s: string, _: number) => (
-            <>
-              <SelectItem
-                key={Math.random()}
-                value={`${s}_desc`}
-                className='outline-none hover:ring-0 hover:bg-foreground/20 px-2 rounded-sm'
-              >
-                {s} desc
-              </SelectItem>
-              <SelectItem
-                key={Math.random()}
-                value={`${s}_asc`}
-                className='outline-none hover:ring-0 hover:bg-foreground/20 px-2 rounded-sm'
-              >
-                {s} asc
-              </SelectItem>
-            </>
+            <SelectItem
+              key={`${s}_asc`}
+              value={`${s}_asc`}
+              className='outline-none hover:ring-0 hover:bg-foreground/20 px-2 rounded-sm'
+            >
+              {s} asc
+            </SelectItem>
+          ))}
+          {SortByGroups.map((s: string, _: number) => (
+            <SelectItem
+              key={`${s}_desc`}
+              value={`${s}_desc`}
+              className='outline-none hover:ring-0 hover:bg-foreground/20 px-2 rounded-sm'
+            >
+              {s} desc
+            </SelectItem>
           ))}
         </SelectGroup>
       </SelectContent>
