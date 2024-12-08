@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <Loyout>
-      <div className='flex gap-6 pb-20 pt-20'>
+      <div className='flex flex-col lg:flex-row gap-2 md:gap-4 lg:gap-6 pb-6 md:pb-8 lg:pb-12 xl:pb-16 2xl:pb-20 pt-6 md:pt-8 lg:pt-12 xl:pt-16 2xl:pt-20'>
         <Filtration />
         <div className='w-full flex flex-col gap-6'>
           <TopUtilities />

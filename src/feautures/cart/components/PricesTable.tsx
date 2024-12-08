@@ -21,63 +21,68 @@ export default function PricesTable() {
   return (
     <>
       {products.length !== 0 && (
-        <Card className='w-1/2 h-full p-4'>
+        <Card className='h-full p-2 w-full '>
           <CardContent>
-            <ScrollArea className='h-[600px]'>
-              <Table>
-                <TableHeader>
-                  <TableRow className='w-full'>
-                    <TableHead className='text-zinc-800 font-medium text-xl'>
-                      Product
-                    </TableHead>
-                    <TableHead className='text-zinc-800 font-medium text-xl'>
-                      Quantity
-                    </TableHead>
-                    <TableHead className='text-zinc-800 font-medium text-xl'>
-                      Total
-                    </TableHead>
-                  </TableRow>
-                </TableHeader>
+            <ScrollArea>
+              <div className='max-h-[600px]'>
+                <Table>
+                  <TableHeader>
+                    <TableRow className='w-full'>
+                      <TableHead className='text-zinc-800 font-medium text-base lg:text-lg 2xl:text-xl'>
+                        Product
+                      </TableHead>
+                      <TableHead className='text-zinc-800 font-medium text-base lg:text-lg 2xl:text-xl'>
+                        Quantity
+                      </TableHead>
+                      <TableHead className='text-zinc-800 font-medium text-base lg:text-lg 2xl:text-xl'>
+                        Total
+                      </TableHead>
+                    </TableRow>
+                  </TableHeader>
 
-                <TableBody>
-                  {products.map((product) => (
-                    <TableRow key={product.id} className='h-fit'>
-                      <TableCell className='text-zinc-800/75 font-medium text-base h-fit py-4'>
-                        {product.title.slice(0, 50)}...
+                  <TableBody>
+                    {products.map((product) => (
+                      <TableRow key={product.id} className='h-fit'>
+                        <TableCell className='text-zinc-800/75 font-medium text-sm lg:text-base 2xl:text-lg h-fit py-2'>
+                          {product.title.slice(0, 25)}...
+                        </TableCell>
+                        <TableCell className='text-zinc-800/75 font-medium text-sm lg:text-base 2xl:text-lg h-fit'>
+                          {product.quantity}
+                        </TableCell>
+                        <TableCell className='text-zinc-800/75 font-medium text-sm lg:text-base 2xl:text-lg h-fit'>
+                          ${Number(product.price * product.quantity).toFixed(2)}
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+
+                  <TableFooter>
+                    <TableRow>
+                      <TableCell
+                        colSpan={2}
+                        className='text-zinc-800 font-semibold text-base'
+                      >
+                        Total
                       </TableCell>
-                      <TableCell className='text-zinc-800/75 font-medium text-base h-fit'>
-                        {product.quantity}
-                      </TableCell>
-                      <TableCell className='text-zinc-800/75 font-medium text-base h-fit'>
-                        ${Number(product.price * product.quantity).toFixed(2)}
+                      <TableCell className='text-zinc-800 font-semibold text-base'>
+                        $
+                        {products
+                          .reduce(
+                            (a, b: { price: number; quantity: number }) => {
+                              return a + b.price * b.quantity;
+                            },
+                            0
+                          )
+                          .toFixed(2)}
                       </TableCell>
                     </TableRow>
-                  ))}
-                </TableBody>
-
-                <TableFooter>
-                  <TableRow>
-                    <TableCell
-                      colSpan={2}
-                      className='text-zinc-800 font-semibold text-base'
-                    >
-                      Total
-                    </TableCell>
-                    <TableCell className='text-zinc-800 font-semibold text-base'>
-                      $
-                      {products
-                        .reduce((a, b: { price: number; quantity: number }) => {
-                          return a + b.price * b.quantity;
-                        }, 0)
-                        .toFixed(2)}
-                    </TableCell>
-                  </TableRow>
-                </TableFooter>
-              </Table>
+                  </TableFooter>
+                </Table>
+              </div>
             </ScrollArea>
           </CardContent>
 
-          <CardFooter className='flex justify-between'>
+          <CardFooter className='flex justify-between items-center h-full'>
             <Button
               variant='outline'
               onClick={() => clearCart()}
@@ -86,11 +91,11 @@ export default function PricesTable() {
               Clear Cart
               <Trash2 />
             </Button>
-            {products.length > 10 && (
-              <p className='text-base font-medium bg-primary text-secondary p-1 px-4 rounded-md shadow-2xl'>
-                Scroll To View All Prices.
+            {/* {products.length > 10 && (
+              <p className='text-base font-medium bg-primary text-secondary p-1 px-4 rounded-md shadow-2x h-fulll'>
+                Scroll.
               </p>
-            )}
+            )} */}
             <Dialog>
               <DialogTrigger asChild>
                 <Button className='shadow-2xl'>

@@ -34,7 +34,7 @@ export default function CardProduct({
             <p className='text-white w-fit text-xs hover:underline font-semibold bg-primary p-1 rounded-full px-4'>
               Category: {category}
             </p>
-            <h1 className='text-zinc-800 font-medium text-xl hover:underline'>
+            <h1 className='text-zinc-800 font-medium text-base lg:text-lg xl:text-xl hover:underline'>
               {title.slice(0, 50)}...
             </h1>
           </div>
@@ -86,7 +86,7 @@ export default function CardProduct({
                 </span>
               }
             />
-            <h1 className='text-foreground text-2xl font-bold'>
+            <h1 className='text-foreground text-lg md:text-xl xl:text-2xl font-bold'>
               ${price.toFixed(2)}
             </h1>
           </div>

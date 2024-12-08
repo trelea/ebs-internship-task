@@ -20,7 +20,7 @@ export default function Grid({ products, loading, err }: Props) {
       {products?.length === 0 || !products ? (
         <NotFound />
       ) : (
-        <section className='grid grid-cols-3 w-full gap-6'>
+        <section className='grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 w-full gap-6'>
           {products?.map((product) => (
             <CardProduct
               key={product.id}
