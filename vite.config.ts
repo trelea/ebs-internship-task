@@ -5,6 +5,7 @@ import path from 'path';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  // @ts-ignore
   test: {
     globals: true,
     environment: 'jsdom',

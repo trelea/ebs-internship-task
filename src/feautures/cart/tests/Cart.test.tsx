@@ -1,8 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import CartProductCard from '../components/CartProductCard';
-import PricesTable from '../components/PricesTable';
-import { useCartStore } from '@/store/CartStore';
 
 describe('Cart Component', () => {
   it('should display correct product name', () => {
